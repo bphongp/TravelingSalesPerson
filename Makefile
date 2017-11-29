@@ -1,19 +1,22 @@
 #Bamphiane Annie Phongphouthai
 #bp8qg
-#November 27, 2017
-#makefile
+#Makefile
+# November 28, 2017
 
 CXX = clang++
 
-CXXFLAGS = -Wall -g
+CXXFLAGS = -Wall -g -O2
 
-OFILES= topological.cpp
+OFILES = traveling.o middleearth.o
 
 .SUFFIXES: .o .cpp
 
-main:	$(OFILES)
+main: 	$(OFILES)
 	$(CXX) $(OFILES)
 	doxygen
+
+traveling.o: traveling.cpp
+middleearth.o: middleearth.h middleearth.cpp
 
 clean:
 	/bin/rm -f *.o *~
